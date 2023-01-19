@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Flag Quiz</title>
-  </head>
-  <body>
-    <h1>Guess the flag</h1>
-    <img src="{{ url_for('static', filename='flags/'+flag)}}" alt="Flag">
-    <form action="{{ url_for('check') }}" method="post">
-      <input type="hidden" name="flag" value="{{ flag }}">
-      <label for="guess">Your guess:</label>
-      <input type="text" id="guess" name="guess">
-      <input type="submit" value="Submit">
+</head>
+<body>
+    <h1>What flag is this?</h1>
+    <img src="{{ url_for('static', filename='flags/' + flag) }}" alt="Flag">
+    <form action="{{ url_for('check') }}" method="POST">
+        <input type="hidden" name="flag" value="{{ flag }}">
+        <input type="text" name="guess" placeholder="Enter your guess">
+        <input type="submit" value="Submit">
     </form>
-  </body>
+</body>
 </html>
