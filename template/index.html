@@ -5,11 +5,15 @@
 </head>
 <body>
     <h1>What flag is this?</h1>
-    <img src="{{ url_for('static', filename='flags/' + flag) }}" alt="Flag">
-    <form action="{{ url_for('check') }}" method="POST">
+    <img src="{{ url_for('static', filename=flag) }}" style="width: 300px; height: 200px;">
+    <form action="{{ url_for('index') }}" method="POST">
         <input type="hidden" name="flag" value="{{ flag }}">
         <input type="text" name="guess" placeholder="Enter your guess">
         <input type="submit" value="Submit">
     </form>
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
 </body>
+
 </html>
